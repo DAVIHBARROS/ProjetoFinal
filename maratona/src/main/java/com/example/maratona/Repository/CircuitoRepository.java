@@ -1,4 +1,11 @@
 package com.example.maratona.Repository;
 
-public class CircuitoRepository {
+import com.example.maratona.Entity.Categoria;
+import com.example.maratona.Entity.Circuito;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CircuitoRepository extends JpaRepository<Circuito, Long>{
+
 }

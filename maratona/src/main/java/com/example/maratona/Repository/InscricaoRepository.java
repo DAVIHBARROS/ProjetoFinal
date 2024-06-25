@@ -1,4 +1,11 @@
 package com.example.maratona.Repository;
 
-public class InscricaoRepository {
+import com.example.maratona.Entity.Categoria;
+import com.example.maratona.Entity.Inscricao;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface InscricaoRepository extends JpaRepository<Inscricao, Long> {
+
 }
