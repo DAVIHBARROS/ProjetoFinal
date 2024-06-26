@@ -35,6 +35,28 @@ public class InscricaoService {
         return inscricaoRepository.findAll();
     }
 
-
+    private double calcularValorInscricao(Inscricao inscricao) throws Exception {
+        Maratonista maratonista = maratonistaRepository.findById(inscricao.getMaratonista().getId()).get();
+        Circuito circuito = circuitoRepository.findById(inscricao.getCircuito().getId()).get();
+        if (maratonista.getIdade() < 18) {
+            switch (circuito.getCategoria()) {
+                case PEQUENO:
+                    return 1300;
+                case MEDIO:
+                    return 2000.0;
+                default:
+                    throw new Exception("Não é permitido fazer inscrição para menores nesta categoria");
+            }
+        } else {
+            switch (circuito.getCategoria()) {
+                case PEQUENO:
+                    return 1500;
+                case MEDIO:
+                    return 2300.0;
+                default:
+                    return 2800.0;
+            }
+        }
+    }
 
 }
