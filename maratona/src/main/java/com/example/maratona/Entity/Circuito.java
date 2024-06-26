@@ -11,5 +11,5 @@ public class Circuito {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int distancia;
-    private Categoria categoria;
+
 }
