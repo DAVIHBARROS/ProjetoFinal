@@ -17,4 +17,7 @@ public class Inscricao {
     @ManyToOne
     private Maratonista maratonista;
 
+    @ManyToOne
+    private Circuito circuito;
+
 }
