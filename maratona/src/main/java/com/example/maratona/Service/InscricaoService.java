@@ -10,6 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+import com.example.maratona.Entity.Circuito;
+
+import com.example.maratona.Entity.Inscricao;
+import com.example.maratona.Repository.InscricaoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
 public class InscricaoService {
 
     @Autowired
@@ -27,5 +37,13 @@ public class InscricaoService {
         inscricao.setMaratonista(maratonista);
         inscricao.setCircuito(circuito);
         return inscricaoRepository.save(inscricao);
+    }
+
+    @Autowired
+    InscricaoRepository inscricaoRepository;
+
+    public List<Inscricao> buscarInscricao() {
+        return inscricaoRepository.findAll();
+
     }
 }

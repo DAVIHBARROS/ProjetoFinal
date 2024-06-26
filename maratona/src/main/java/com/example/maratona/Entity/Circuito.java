@@ -17,4 +17,5 @@ public class Circuito {
 
     @OneToMany(mappedBy = "circuito")
     private List<Inscricao> inscricao;
+
 }
