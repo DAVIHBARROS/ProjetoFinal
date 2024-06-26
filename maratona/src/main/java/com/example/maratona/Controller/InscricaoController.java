@@ -25,4 +25,7 @@ public class InscricaoController {
     public List<Inscricao> buscarInscricao() {
         return inscricaoService.buscarInscricao();
     }
+
+
+
 }
